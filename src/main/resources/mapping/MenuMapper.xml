@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cx.dao.MenuDaoI" >
+	<!-- namespace对应的是dao层的接口 -->
+	
+  <resultMap id="BaseResultMap" type="cx.entity.MenuEntity" >
+  	<!-- column对应的是数据库中的字段，property对应的是实体类中的字段 -->
+    <id     column="id_" property="id" />
+    <result column="name_" property="name" />
+    <result column="Pid_" property="Pid" />
+  </resultMap>
+ 
+ 
+  <select id="getMenu" resultType="Map">
+      SELECT *  FROM menu
+  </select>
+  
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cx.dao.RegionDaoI" >
+	<!-- namespace对应的是dao层的接口 -->
+	
+  <resultMap id="BaseResultMap" type="cx.entity.RegionEntity" >
+  	<!-- column对应的是数据库中的字段，property对应的是实体类中的字段 -->
+    <result column="CODE" property="CODE"/>
+    <result column="country_code" property="country_code" />
+    <result column="region_name_e" property="region_name_e" />
+    <result column="region_name_c" property="region_name_c"/>
+    <result column="level" property="level"/>
+    <result column="upper_region" property="upper_region"/>
+  </resultMap>
+ 
+ 
+  <select id="getEntity" resultType="Map" >
+    select 
+      CODE,region_name_c,upper_region
+    from t_region
+      LIMIT 50
+  </select>
+  
+</mapper>
