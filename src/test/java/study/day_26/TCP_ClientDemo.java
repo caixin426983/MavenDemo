@@ -15,7 +15,7 @@ import java.net.Socket;
 public class TCP_ClientDemo {
     public static void main(String[] args) throws IOException {
 
-        Socket socket = new Socket("192.168.0.105",8888);
+        Socket socket = new Socket("CX",8888);
         OutputStream os = socket.getOutputStream();
         os.write("TCP Hello".getBytes());
         socket.close();
